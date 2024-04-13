@@ -25,6 +25,8 @@ class _SignupScreenState extends State<SignupScreen> {
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool _rememberMe = false;
+  bool _visibilityText = true;
+
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +73,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                             controller: _EmailController,
                                             textInputAction:
                                                 TextInputAction.done,
-                                            textInputType: TextInputType.phone,
+                                            textInputType: TextInputType.text,
                                             // prefix: Container(
                                             //     margin: EdgeInsets.fromLTRB(
                                             //         20.h, 16.v, 21.h, 15.v),
@@ -94,7 +96,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                             controller: _phonenumberController,
                                             textInputAction:
                                                 TextInputAction.done,
-                                            textInputType: TextInputType.phone,
+                                            textInputType: TextInputType.text,
                                             // prefix: Container(
                                             //     margin: EdgeInsets.fromLTRB(
                                             //         20.h, 16.v, 21.h, 15.v),
@@ -117,7 +119,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                             controller: _usernameController,
                                             textInputAction:
                                                 TextInputAction.done,
-                                            textInputType: TextInputType.phone,
+                                            textInputType: TextInputType.text,
                                             // prefix: Container(
                                             //     margin: EdgeInsets.fromLTRB(
                                             //         20.h, 16.v, 21.h, 15.v),
@@ -137,10 +139,16 @@ class _SignupScreenState extends State<SignupScreen> {
                                         ),
                                         SizedBox(height: 10.v),
                                         CustomTextFormField(
+                                          suffix: IconButton(onPressed: (){
+                                            setState(() {
+                                              _visibilityText =! _visibilityText;
+                                            });
+                                          }, icon: Icon( _visibilityText ? Icons.visibility : Icons.visibility_off,size: 25, color: Colors.white,)),
+                                          obscureText: _visibilityText,
                                             controller: _passwordController,
                                             textInputAction:
                                                 TextInputAction.done,
-                                            textInputType: TextInputType.phone,
+                                            textInputType: TextInputType.text,
                                             // prefix: Container(
                                             //     margin: EdgeInsets.fromLTRB(
                                             //         20.h, 16.v, 21.h, 15.v),
@@ -160,11 +168,17 @@ class _SignupScreenState extends State<SignupScreen> {
                                         ),
                                         SizedBox(height: 10.v),
                                         CustomTextFormField(
+                                            suffix: IconButton(onPressed: (){
+                                              setState(() {
+                                                _visibilityText =! _visibilityText;
+                                              });
+                                            }, icon: Icon( _visibilityText ? Icons.visibility : Icons.visibility_off,size: 25, color: Colors.white,)),
+                                            obscureText: _visibilityText,
                                             controller:
                                                 _ConfirmpasswordController,
                                             textInputAction:
                                                 TextInputAction.done,
-                                            textInputType: TextInputType.phone,
+                                            textInputType: TextInputType.text,
                                             // prefix: Container(
                                             //     margin: EdgeInsets.fromLTRB(
                                             //         20.h, 16.v, 21.h, 15.v),
@@ -245,6 +259,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                               style:
                                                   theme.textTheme.bodySmall!),
                                         ),
+                                        SizedBox(width: 8,),
                                         InkWell(
                                           onTap: () {
                                             Navigator.push(
@@ -254,7 +269,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                                         LoginScreen())));
                                           },
                                           child: Container(
-                                              child: Text("Sign Up",
+                                              child: Text("Sign In",
                                                   style: theme
                                                       .textTheme.labelLarge!
                                                       .copyWith(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as fs;
+import 'package:project/screens/home.dart';
 import 'package:project/screens/singnup.dart';
 import 'package:project/theme/theme_helper.dart';
 import 'package:project/utils/image_constant.dart';
@@ -21,6 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController _passwordController = TextEditingController();
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool _rememberMe = false;
+  bool _visibilityText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                 _usernameEmailController,
                                             textInputAction:
                                                 TextInputAction.done,
-                                            textInputType: TextInputType.phone,
+                                            textInputType: TextInputType.text,
                                             // prefix: Container(
                                             //     margin: EdgeInsets.fromLTRB(
                                             //         20.h, 16.v, 21.h, 15.v),
@@ -88,10 +90,16 @@ class _LoginScreenState extends State<LoginScreen> {
                                         ),
                                         SizedBox(height: 10.v),
                                         CustomTextFormField(
+                                            suffix: IconButton(onPressed: (){
+                                              setState(() {
+                                                _visibilityText =! _visibilityText;
+                                              });
+                                            }, icon: Icon( _visibilityText ? Icons.visibility : Icons.visibility_off,size: 25, color: Colors.white,)),
+                                            obscureText: _visibilityText,
                                             controller: _passwordController,
                                             textInputAction:
                                                 TextInputAction.done,
-                                            textInputType: TextInputType.phone,
+                                            textInputType: TextInputType.text,
                                             // prefix: Container(
                                             //     margin: EdgeInsets.fromLTRB(
                                             //         20.h, 16.v, 21.h, 15.v),
@@ -158,8 +166,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ),
                                     SizedBox(height: 40.v),
                                     CustomElevatedButton(
-                                        text: "Sign In", onPressed: () {}),
-                                    SizedBox(height: 10.v),
+                                        text: "Sign In", onPressed: () {
+                                          Navigator.push(context, MaterialPageRoute(builder:((context)=>HomePage()) ));
+                                    }),
+                                    SizedBox(height: 20.v),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
@@ -169,6 +179,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                               style:
                                                   theme.textTheme.bodySmall!),
                                         ),
+                                        SizedBox(width: 5,),
                                         InkWell(
                                           onTap: () {
                                             Navigator.push(

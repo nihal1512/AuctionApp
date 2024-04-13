@@ -137,7 +137,7 @@ class TextThemes {
           fontWeight: FontWeight.w400,
         ),
         bodySmall: TextStyle(
-          color: Colors.white,
+          color: Colors.grey.shade600,
           fontSize: 12.fSize,
           fontFamily: 'Work Sans',
           fontWeight: FontWeight.w400,
@@ -167,7 +167,7 @@ class TextThemes {
           fontWeight: FontWeight.w400,
         ),
         labelLarge: TextStyle(
-          color: Colors.blue,
+          color: Colors.white,
           fontSize: 12.fSize,
           fontFamily: 'Work Sans',
           fontWeight: FontWeight.w700,

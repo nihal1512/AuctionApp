@@ -4,6 +4,7 @@ import 'package:project/theme/theme_helper.dart';
 import 'package:project/utils/size_utils.dart';
 
 class CustomTextFormField extends StatelessWidget {
+
   CustomTextFormField({
     Key? key,
     this.alignment,
@@ -98,6 +99,7 @@ class CustomTextFormField extends StatelessWidget {
           validator: validator,
         ),
       );
+
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? "",
         hintStyle: hintStyle ?? CustomTextStyles.bodyLargeGray900,
