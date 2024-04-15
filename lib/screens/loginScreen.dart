@@ -94,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                               setState(() {
                                                 _visibilityText =! _visibilityText;
                                               });
-                                            }, icon: Icon( _visibilityText ? Icons.visibility : Icons.visibility_off,size: 25, color: Colors.white,)),
+                                            }, icon: Icon( _visibilityText ? Icons.visibility_off : Icons.visibility,size: 25, color: Colors.white,)),
                                             obscureText: _visibilityText,
                                             controller: _passwordController,
                                             textInputAction:
