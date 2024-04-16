@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:project/screens/licenseplate.dart';
+import 'package:project/screens/mobilenumber.dart';
+import 'package:project/widget/bottomnavbar.dart';
 import 'package:project/widget/cardWidget.dart';
 import 'package:project/widget/custom_drawer.dart';
 
@@ -11,6 +14,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: Color(0xff181816),
       key: _scaffoldKey,
       
+      bottomNavigationBar: CustomBottomNavigationBar(),
       endDrawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -120,7 +124,7 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: 20,),
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(margin: EdgeInsets.only(left: 20),
@@ -130,6 +134,15 @@ class HomePage extends StatelessWidget {
                                  fontWeight: FontWeight.w600,
                               ),),
                   ),
+                  InkWell(
+                    onTap:(){
+                       Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        LicencePlate())));
+                    },
+                    child:
                   Row(
                     children: [
                       Container(margin: EdgeInsets.only(right: 2),
@@ -143,8 +156,7 @@ class HomePage extends StatelessWidget {
                         child: Icon(Icons.arrow_forward,color: Colors.white,size: 16,)
                       ),
                     ],
-                  ),
-
+                  ),)
               ],
             ),
            
@@ -159,7 +171,8 @@ class HomePage extends StatelessWidget {
                Container(
                 margin: EdgeInsets.all(10),
       height: 155, // Set the height of the horizontal ListView
-      child: ListView(
+      child:
+       ListView(
         
         scrollDirection: Axis.horizontal,
         // itemCount: 4, // Number of cards
@@ -173,16 +186,25 @@ class HomePage extends StatelessWidget {
 
        ],
       ),
-    ),SizedBox(height: 10,),
+    ),SizedBox(height: 20,),
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(margin: EdgeInsets.only(left: 20),
-                    child: Text('Featured plate numbers', style: TextStyle(fontFamily: 'Roboto Slab',
+                    child: Text('Featured Mobile number', style: TextStyle(fontFamily: 'Roboto Slab',
                                 color: Colors.white,
                                 fontSize: 20,
                                  fontWeight: FontWeight.w600,
                               ),),
                   ),
+                  InkWell(
+                    onTap:(){
+                          Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        MobileNumber())));
+                    },
+                    child:
                   Row(
                     children: [
                       Container(margin: EdgeInsets.only(right: 2),
@@ -196,61 +218,7 @@ class HomePage extends StatelessWidget {
                         child: Icon(Icons.arrow_forward,color: Colors.white,size: 16,)
                       ),
                     ],
-                  ),
-
-              ],
-            ),
-           
-               
-                Container(margin: EdgeInsets.only(left: 20,top: 4),
-                child: Text('Premium plate number ', style: TextStyle(fontFamily: 'Roboto Slab',
-                            color: Colors.white,
-                            fontWeight: FontWeight.w100,
-                            fontSize: 14,
-                          ),),
-              ),
-               Container(
-                margin: EdgeInsets.all(10),
-      height: 155, // Set the height of the horizontal ListView
-      child: ListView(
-        
-        scrollDirection: Axis.horizontal,
-        // itemCount: 4, // Number of cards
-       children: [
-        CustomCardWidget(),
-        CustomCardWidget(),
-        CustomCardWidget(),
-        CustomCardWidget(),
-        CustomCardWidget(),
-        CustomCardWidget(),
-
-       ],
-      ),
-    ),
-    SizedBox(height: 10,),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(margin: EdgeInsets.only(left: 20),
-                    child: Text('Featured plate numbers', style: TextStyle(fontFamily: 'Roboto Slab',
-                                color: Colors.white,
-                                fontSize: 20,
-                                 fontWeight: FontWeight.w600,
-                              ),),
-                  ),
-                  Row(
-                    children: [
-                      Container(margin: EdgeInsets.only(right: 2),
-                        child: Text('More', style: TextStyle(fontFamily: 'Roboto Slab',
-                                    color: Colors.white,
-                                    fontSize: 12,
-                                     fontWeight: FontWeight.w400,
-                                  ),),
-                      ),
-                       Container(margin: EdgeInsets.only(right: 20),
-                        child: Icon(Icons.arrow_forward,color: Colors.white,size: 16,)
-                      ),
-                    ],
-                  ),
+                  ),)
 
               ],
             ),
@@ -281,6 +249,7 @@ class HomePage extends StatelessWidget {
        ],
       ),
     ),
+    SizedBox(height: 50,)
         ],
       ),
     );

@@ -22,7 +22,15 @@ class CustomCardWidget extends StatelessWidget {
       width: 147,
       decoration: BoxDecoration(
         color: Colors.white,
-       
+      //  boxShadow: [
+      //         BoxShadow(
+      //           color: Colors.grey.withOpacity(0.12), // Shadow color
+      //           spreadRadius: 5, // Spread radius
+      //           blurRadius: 7, // Blur radius
+      //           offset: Offset(1, 2), // Offset from the shadow
+      //         ),
+      //       ],
+          
         borderRadius: BorderRadius.circular(20),
       ),
       child: InkWell(
