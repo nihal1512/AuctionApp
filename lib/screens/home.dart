@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/screens/about.dart';
 import 'package:project/screens/licenseplate.dart';
 import 'package:project/screens/mobilenumber.dart';
 import 'package:project/widget/bottomnavbar.dart';
@@ -140,7 +141,7 @@ class HomePage extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: ((context) =>
-                                                        LicencePlate())));
+                                                        AboutScreen())));
                     },
                     child:
                   Row(

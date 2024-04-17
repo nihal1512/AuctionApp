@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:project/widget/bottomsheet.dart';
 import 'package:project/widget/grid_view.dart';
 
 class LicencePlate extends StatefulWidget {
@@ -89,7 +90,16 @@ class _LicencePlateState extends State<LicencePlate> {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                Icon(Icons.filter_list_alt,color:Colors.white,size:20)
+                InkWell(
+                  onTap: (){
+                                         showModalBottomSheet(
+              context: context,
+              builder: (BuildContext context) {
+                return CustomBottomSheet(); // Your custom bottom sheet widget
+              },
+            );
+                  },
+                  child: Icon(Icons.filter_list_alt,color:Colors.white,size:20))
               ],
             ),
           ),
