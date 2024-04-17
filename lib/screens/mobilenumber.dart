@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:project/widget/bottomnavbar.dart';
 import 'package:project/widget/grid_view.dart';
+import 'package:project/widget/bottomsheet.dart';
 
 class MobileNumber extends StatefulWidget {
   const MobileNumber({super.key});
@@ -15,6 +17,8 @@ class _MobileNumberState extends State<MobileNumber> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       
+      bottomNavigationBar: CustomBottomNavigationBar(),
       key: _scaffoldKey,
       backgroundColor: Color(0xff181816),
        endDrawer: Drawer(
@@ -89,7 +93,16 @@ class _MobileNumberState extends State<MobileNumber> {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                Icon(Icons.filter_list_alt,color:Colors.white,size:20)
+                InkWell(
+                  onTap: (){
+                                showModalBottomSheet(
+              context: context,
+              builder: (BuildContext context) {
+                return CustomBottomSheet(); // Your custom bottom sheet widget
+              },
+            );
+                  },
+                  child: Icon(Icons.filter_list_alt,color:Colors.white,size:20))
               ],
             ),
           ),

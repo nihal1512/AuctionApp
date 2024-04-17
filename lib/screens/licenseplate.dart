@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:project/widget/bottomnavbar.dart';
 import 'package:project/widget/bottomsheet.dart';
 import 'package:project/widget/grid_view.dart';
 
@@ -16,6 +17,8 @@ class _LicencePlateState extends State<LicencePlate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       
+      bottomNavigationBar: CustomBottomNavigationBar(),
       key: _scaffoldKey,
       backgroundColor: Color(0xff181816),
        endDrawer: Drawer(

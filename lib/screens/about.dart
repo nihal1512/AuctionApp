@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/widget/bottomnavbar.dart';
 
 class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
@@ -13,6 +14,8 @@ class _AboutScreenState extends State<AboutScreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+       
+      bottomNavigationBar: CustomBottomNavigationBar(),
        key: _scaffoldKey,
       backgroundColor: Color(0xff181816),
        endDrawer: Drawer(
@@ -40,7 +43,7 @@ class _AboutScreenState extends State<AboutScreen> {
           ],
         ),
       ),
-      body: Column(
+      body: ListView(
         children: [
            Padding(
                
