@@ -337,9 +337,10 @@ class _checkoutbidpgState extends State<checkoutbidpg> {
                   //     MaterialPageRoute(
                   //         builder: ((context) => checkoutbidpg())));
                 },
-                child: Container(
+                child: Container(  
+
                   margin: EdgeInsets.only(right: 20, top:10),
-                  width: screenWidth * 0.87,
+                  width: screenWidth * 0.86,
                   height: screenHeight * 0.06,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(40),
