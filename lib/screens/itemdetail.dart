@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/screens/bidingpg.dart';
 import 'package:project/screens/mobilenumber.dart';
 import 'package:project/widget/cardWidget.dart';
 
@@ -148,21 +149,30 @@ class _ItemDetailState extends State<ItemDetail> {
                       ),),
                   ),
                     ),
-                    Container(margin: EdgeInsets.only(right: 20,top: 10),
-                       width: screenWidth * 0.42,
-                  height: screenHeight * 0.06,
-                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
-                 border: Border.all(width: 2,color: Colors.white,),
-                  ),
-                  child: Center(
-                    child: Text("Place Your Bid",
-                      style: TextStyle(
-                          fontFamily: "Work Sans",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400
-                      
-                      ),),
-                  ),
+                    InkWell(
+                      onTap: (){
+                         Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        BiddingPage())));
+                      },
+                      child: Container(margin: EdgeInsets.only(right: 20,top: 10),
+                         width: screenWidth * 0.42,
+                                        height: screenHeight * 0.06,
+                                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
+                                       border: Border.all(width: 2,color: Colors.white,),
+                                        ),
+                                        child: Center(
+                      child: Text("Place Your Bid",
+                        style: TextStyle(
+                            fontFamily: "Work Sans",
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400
+                        
+                        ),),
+                                        ),
+                      ),
                     )
                   ],),),
                   Center(
