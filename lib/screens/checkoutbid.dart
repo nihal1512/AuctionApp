@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/screens/checkoutdetails.dart';
 import 'package:project/theme/theme_helper.dart';
 import 'package:project/utils/size_utils.dart';
 import 'package:project/widget/custom_text_field.dart';
@@ -332,10 +333,10 @@ class _checkoutbidpgState extends State<checkoutbidpg> {
         Center(
             child: InkWell(
                 onTap: () {
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: ((context) => checkoutbidpg())));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => checkoutdetailpg())));
                 },
                 child: Container(  
 
