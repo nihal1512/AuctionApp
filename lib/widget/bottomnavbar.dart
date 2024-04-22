@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/about.dart';
 import 'package:project/screens/home.dart';
+import 'package:project/screens/licenseplate.dart';
 import 'package:project/screens/mobilenumber.dart';
 import 'package:project/screens/profilesscreen.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -24,7 +26,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: ((context) =>
-                                                        LicensePage())));},
+                                                        LicencePlate())));},
                 icon: Icon(Icons.search, color: Colors.white),
               ),
               IconButton(
@@ -78,7 +80,11 @@ class CustomBottomNavigationBar extends StatelessWidget {
               width: 66.0,
               height: 66.0,
               child: FloatingActionButton(
-                onPressed: () => print('Home pressed'),
+                onPressed: (){Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        HomePage())));},
                 child: Icon(Icons.home, color: Colors.white),
                 backgroundColor: Color(0xff4D4D4D),
                 shape: CircleBorder(),

@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:project/screens/about.dart';
 import 'package:project/screens/checkoutbid.dart';
+import 'package:project/screens/home.dart';
+import 'package:project/screens/licenseplate.dart';
+import 'package:project/screens/mobilenumber.dart';
+import 'package:project/screens/profilesscreen.dart';
 import 'package:project/theme/theme_helper.dart';
 import 'package:project/utils/size_utils.dart';
 import 'package:project/widget/custom_text_field.dart';
@@ -25,25 +30,65 @@ class _BiddingPageState extends State<BiddingPage> {
         key: _scaffoldKey,
         backgroundColor: Color(0xff181816),
         endDrawer: Drawer(
+          backgroundColor:   Color(0xff181816),
           child: ListView(
             padding: EdgeInsets.zero,
             children: [
-              DrawerHeader(
-                child: Text('Drawer Header'),
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                ),
-              ),
-              ListTile(
-                title: Text('Item 1'),
+             SizedBox(height: 50,),
+               ListTile(
+                leading: Icon(Icons.home,color: Colors.grey,),
+                title: Text('Home Page',style: TextStyle(color: Colors.white,fontSize: 16),),
                 onTap: () {
-                  Navigator.pop(context);
+                   Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        HomePage())));
                 },
               ),
               ListTile(
-                title: Text('Item 2'),
+                leading: Image.asset('assets/icon/licenceplate.png'),
+                title: Text('Licence Plate',style: TextStyle(color: Colors.white,fontSize: 16),),
                 onTap: () {
-                  Navigator.pop(context);
+                   Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        LicencePlate())));
+                },
+              ),
+              ListTile(
+                leading: Image.asset('assets/icon/mobile.png'),
+                title: Text('Mobile Number',style: TextStyle(color: Colors.white,fontSize: 16),),
+                onTap: () {
+                 Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        MobileNumber())));
+                },
+              ),
+            
+              ListTile(
+                leading: Image.asset('assets/icon/about.png'),
+                title: Text('About',style: TextStyle(color: Colors.white,fontSize: 16),),
+                onTap: () {
+                   Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        AboutScreen())));
+                },
+              ),
+              ListTile(
+                leading: Image.asset('assets/icon/profile.png'),
+                title: Text('Profile',style: TextStyle(color: Colors.white,fontSize: 16),),
+                onTap: () {
+                   Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        ProfileScreen())));
                 },
               ),
             ],

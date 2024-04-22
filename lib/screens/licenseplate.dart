@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:project/screens/about.dart';
+import 'package:project/screens/home.dart';
+import 'package:project/screens/mobilenumber.dart';
+import 'package:project/screens/profilesscreen.dart';
 import 'package:project/widget/bottomnavbar.dart';
 import 'package:project/widget/bottomsheet.dart';
 import 'package:project/widget/grid_view.dart';
@@ -21,31 +25,71 @@ class _LicencePlateState extends State<LicencePlate> {
       bottomNavigationBar: CustomBottomNavigationBar(),
       key: _scaffoldKey,
       backgroundColor: Color(0xff181816),
-       endDrawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              child: Text('Drawer Header'),
-              decoration: BoxDecoration(
-                color: Colors.blue,
+        endDrawer: Drawer(
+          backgroundColor:   Color(0xff181816),
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+             SizedBox(height: 50,),
+               ListTile(
+                leading: Icon(Icons.home,color: Colors.grey,),
+                title: Text('Home Page',style: TextStyle(color: Colors.white,fontSize: 16),),
+                onTap: () {
+                   Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        HomePage())));
+                },
               ),
-            ),
-            ListTile(
-              title: Text('Item 1'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Text('Item 2'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
+              ListTile(
+                leading: Image.asset('assets/icon/licenceplate.png'),
+                title: Text('Licence Plate',style: TextStyle(color: Colors.white,fontSize: 16),),
+                onTap: () {
+                   Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        LicencePlate())));
+                },
+              ),
+              ListTile(
+                leading: Image.asset('assets/icon/mobile.png'),
+                title: Text('Mobile Number',style: TextStyle(color: Colors.white,fontSize: 16),),
+                onTap: () {
+                 Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        MobileNumber())));
+                },
+              ),
+            
+              ListTile(
+                leading: Image.asset('assets/icon/about.png'),
+                title: Text('About',style: TextStyle(color: Colors.white,fontSize: 16),),
+                onTap: () {
+                   Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        AboutScreen())));
+                },
+              ),
+              ListTile(
+                leading: Image.asset('assets/icon/profile.png'),
+                title: Text('Profile',style: TextStyle(color: Colors.white,fontSize: 16),),
+                onTap: () {
+                   Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        ProfileScreen())));
+                },
+              ),
+            ],
+          ),
         ),
-      ),
       body: 
         Column(children: [
          

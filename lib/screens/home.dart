@@ -3,6 +3,7 @@ import 'package:project/screens/about.dart';
 import 'package:project/screens/itemdetail.dart';
 import 'package:project/screens/licenseplate.dart';
 import 'package:project/screens/mobilenumber.dart';
+import 'package:project/screens/profilesscreen.dart';
 import 'package:project/widget/bottomnavbar.dart';
 import 'package:project/widget/cardWidget.dart';
 import 'package:project/widget/custom_drawer.dart';
@@ -17,31 +18,71 @@ class HomePage extends StatelessWidget {
       key: _scaffoldKey,
       
       bottomNavigationBar: CustomBottomNavigationBar(),
-      endDrawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              child: Text('Drawer Header'),
-              decoration: BoxDecoration(
-                color: Colors.blue,
+       endDrawer: Drawer(
+          backgroundColor:   Color(0xff181816),
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+             SizedBox(height: 50,),
+               ListTile(
+                leading: Icon(Icons.home,color: Colors.grey,),
+                title: Text('Home Page',style: TextStyle(color: Colors.white,fontSize: 16),),
+                onTap: () {
+                   Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        HomePage())));
+                },
               ),
-            ),
-            ListTile(
-              title: Text('Item 1'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Text('Item 2'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
+              ListTile(
+                leading: Image.asset('assets/icon/licenceplate.png'),
+                title: Text('Licence Plate',style: TextStyle(color: Colors.white,fontSize: 16),),
+                onTap: () {
+                   Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        LicencePlate())));
+                },
+              ),
+              ListTile(
+                leading: Image.asset('assets/icon/mobile.png'),
+                title: Text('Mobile Number',style: TextStyle(color: Colors.white,fontSize: 16),),
+                onTap: () {
+                 Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        MobileNumber())));
+                },
+              ),
+            
+              ListTile(
+                leading: Image.asset('assets/icon/about.png'),
+                title: Text('About',style: TextStyle(color: Colors.white,fontSize: 16),),
+                onTap: () {
+                   Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        AboutScreen())));
+                },
+              ),
+              ListTile(
+                leading: Image.asset('assets/icon/profile.png'),
+                title: Text('Profile',style: TextStyle(color: Colors.white,fontSize: 16),),
+                onTap: () {
+                   Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        ProfileScreen())));
+                },
+              ),
+            ],
+          ),
         ),
-      ),
       body: ListView(
         children: [
           Stack(
@@ -142,7 +183,7 @@ class HomePage extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: ((context) =>
-                                                        ItemDetail())));
+                                                        LicencePlate())));
                     },
                     child:
                   Row(

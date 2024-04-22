@@ -41,6 +41,8 @@ dependencies:
   google_fonts: ^6.2.1
   font_awesome_flutter: ^10.7.0
   flutter_rating_bar: ^4.0.1
+  flutter_riverpod: ^2.5.1
+  http: ^1.2.1
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +71,7 @@ flutter:
   assets:
      - assets/
      - assets/image/
+     - assets/icon/
      
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/bidingpg.dart';
+import 'package:project/screens/checkoutbid.dart';
 import 'package:project/screens/mobilenumber.dart';
 import 'package:project/widget/cardWidget.dart';
 
@@ -49,6 +50,7 @@ class _ItemDetailState extends State<ItemDetail> {
            Padding(
             padding: const EdgeInsets.only(top: 0, left: 0, right: 0),
             child: AppBar(
+                iconTheme: IconThemeData(color: Colors.white),
               backgroundColor: Colors.transparent,
               elevation: 0,
               title: Row(
@@ -62,7 +64,7 @@ class _ItemDetailState extends State<ItemDetail> {
                   ),
                 ],
               ),
-              automaticallyImplyLeading: false,
+              // automaticallyImplyLeading: false,
               actions: [
                 IconButton(
                   icon: Icon(
@@ -177,7 +179,14 @@ class _ItemDetailState extends State<ItemDetail> {
                   ],),),
                   Center(
                     child: InkWell(
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        checkoutbidpg())));
+
+                      },
                       child: Container(margin: EdgeInsets.only(right: 20,top: 20),
                            width: screenWidth * 0.87,
                       height: screenHeight * 0.06,
